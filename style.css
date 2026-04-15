@@ -41,10 +41,12 @@ header {
 }
 
 #contenedor-logo img {
-    height: 55px;
-    width: auto;
+    height: 5em;
+    width: 100%;
     transition: transform 0.3s;
+    padding: 0;
 }
+
 
 #contenedor-logo img:hover {
     transform: scale(1.05);
@@ -111,16 +113,23 @@ nav ul li a:hover {
     padding: 0 8%;
     position: relative;
     overflow: hidden;
+    justify-content: center;
 }
 
 #home::before {
     content: '🐾';
     position: absolute;
     font-size: 350px;
-    opacity: 0.05;
+    opacity: 0.08;
     right: -30px;
-    bottom: -50px;
     pointer-events: none;
+}
+#home::after{
+    content: '🐾';
+    position: absolute;
+    font-size: 350px;
+    left: 30px;
+    opacity: 0.08;
 }
 
 
@@ -128,6 +137,7 @@ nav ul li a:hover {
     max-width: 650px;
     position: relative;
     z-index: 2;
+    
 }
 
 #home h1 {
@@ -208,7 +218,7 @@ nav ul li a:hover {
 }
 
 .carrusel-track {
-    display: inline-flex;
+    display: flex;
     gap: 1.8rem;
     animation: scrollInfinito 40s linear infinite;
 }
@@ -854,7 +864,7 @@ html {
         gap: 2rem;
     }
     
-    #catalogo article > div:first-child {
+    #catalogo article  div:first-child {
         max-width: 100%;
     }
     
