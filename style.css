@@ -12,7 +12,6 @@
     --mar: #5A9BDF;
     --lago: #8BB5E8;
     
-    /* Colores base */
     --blanco: #FFFFFF;
     --texto-profundo: #2C3E4E;
     --texto-suave: #5D6E7E;
@@ -30,7 +29,6 @@ body {
     line-height: 1.5;
 }
 
-/* ========== HEADER - NAVEGACIÓN ========== */
 header {
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
