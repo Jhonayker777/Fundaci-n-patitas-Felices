@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('fonts/LuckiestGuy.ttf') format('ttf'),
+         url('fonts/Cafe\ Francoise_D.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     
     --arena: #F5F0EB;
@@ -23,7 +31,7 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    font-family: "MiFuentePersonalizada", sans-serif;
     background-color: var(--fondo-calido);
     color: var(--texto-profundo);
     line-height: 1.5;
