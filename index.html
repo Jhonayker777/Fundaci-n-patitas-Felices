@@ -107,9 +107,9 @@
                     "Somos un grupo de apasionados por la vida animal que decidio dejar de ser espectador para
                     convertirse en actor del cambio. En Patitas Felices, cada rescate es un compromiso de por vida."
                 </p>
-                <button onclick="window.location.href='#catalogo'">
-                    Conoce a nuestros peluditos
-                </button>
+                <div id="quienes-somos-container">
+                    <img src="imagenes/quienes-somos-gato.png" alt="">
+                </div>
             </article>
         </section>
         <section id="Mision">
@@ -118,13 +118,13 @@
                 <article>
                     <div class="mision-icono"><img src="imagenes/rescate-inmediato.png" alt=""></div>
                     <h3>Rescate Inmediato</h3>
-                    <p>Respondemos a cada llamado de auxilio, rescatando animales en situacion de vulnerabilidad las
+                    <p>Respondemos a cada llamado de auxilio, rescatando animales en situación de vulnerabilidad las
                         24/7.</p>
                 </article>
                 <article>
                     <div class="mision-icono"><img src="imagenes/sanacion-amor.png" alt=""></div>
                     <h3>Sanamos con amor</h3>
-                    <p>Brindamos atencion veterinaria, rehabilitacion y mucho cariño para recuperar su salud y
+                    <p>Brindamos atención veterinaria, rehabilitación y mucho cariño para recuperar su salud y
                         confianza.</p>
                 </article>
                 <article>
@@ -140,24 +140,30 @@
             </div>
         </section>
         <section id="Vision">
-            <h2>Nuestra Visión</h2>
-            <p>"Nuestros planes tienen huellas"</p>
-            <article>
-                <img src="imagenes/0abandono.png" alt="Emoji">
-                <p>Cero Abandono</p>
-            </article>
-            <article>
-                <img src="imagenes/educacion-vital.png" alt="Emoji">
-                <p>Educacion Vital</p>
-            </article>
-            <article>
-                <img src="imagenes/red-esperanza.png" alt="Emoji">
-                <p>Red de Esperanza</p>
-            </article>
-            <article>
-                <img src="imagenes/huella-cambio.png" alt="Emoji">
-                <p>Huella de Cambio</p>
-            </article>
+            <h2> Nuestra Visión </h2>
+            <p class="vision-frase">"Nuestros pasos dejan marca"</p>
+            <div class="vision-container">
+                <article>
+                    <div class="vision-icono"><img src="imagenes/0abandono.png" alt=""></div>
+                    <h3>Cero Abandono</h3>
+                    <p>Un futuro donde ningún animal sea abandonado en las calles.</p>
+                </article>
+                <article>
+                    <div class="vision-icono"><img src="imagenes/educacion-vital.png" alt=""></div>
+                    <h3>Educación Vital</h3>
+                    <p>Generaciones conscientes del respeto hacia los animales.</p>
+                </article>
+                <article>
+                    <div class="vision-icono"><img src="imagenes/red-esperanza.png" alt=""></div>
+                    <h3>Red de Esperanza</h3>
+                    <p>Una comunidad unida protegiendo a quienes no tienen voz.</p>
+                </article>
+                <article>
+                    <div class="vision-icono"><img src="imagenes/huella-cambio.png" alt=""></div>
+                    <h3>Huella de Cambio</h3>
+                    <p>Ser referentes en bienestar animal a nivel nacional.</p>
+                </article>
+            </div>
         </section>
         <section id="Eventos">
             <h2>"Nuestra huella en acción"</h2>
@@ -190,18 +196,22 @@
         <section id="catalogo">
 
             <article id="portada">
-                <div>
-                    <img src="imagenes/Logotipo.webp" alt="Logo Patitas Felices">
-                    <p>"Cada uno tiene una historia, solo les falta un hogar para empezar un nuevo capitulo."</p>
+                <div class="portada-contenido">
+                    <div class="portada-logo">
+                        <img src="imagenes/Logotipo.webp" alt="Patitas Felices Logo">
+                    </div>
+                    <p class="portada-frase">
+                        Cada uno tiene una historia,<br>
+                        solo les falta un hogar para empezar un nuevo capítulo.
+                    </p>
                 </div>
-                <div>
+                <div class="portada-imagen">
                     <img src="imagenes/catalogo-perro-principal.png" alt="Perro feliz">
                 </div>
             </article>
             <article>
                 <div>
-                    <img src="imagenes/luna.png"
-                        alt="Luna">
+                    <img src="imagenes/luna.png" alt="Luna">
                 </div>
                 <div>
                     <h2>¡LUNA!</h2>
@@ -210,9 +220,7 @@
                         <strong>Tamaño/Raza:</strong> Pequeña / Criolla<br>
                         <strong>Estado:</strong> Adoptada 🔴
                     </p>
-                    <a href="perfiles/luna.html" style="text-decoration: none;">
-                        <button class="btn-ver-mas">Ver perfil →</button>
-                    </a>
+                    <button class="btn-adoptar">Adoptar</button>
                 </div>
 
             </article>
@@ -224,17 +232,15 @@
                         <strong>Tamaño/Raza:</strong> Labrador - Grande<br>
                         <strong>Estado:</strong> Disponible 🟢
                     </p>
-                    <button class="btn-ver-mas">Ver perfil →</button>
+                    <button class="btn-adoptar">Adoptar</button>
                 </div>
                 <div>
-                    <img src="imagenes/bruno.png"
-                        alt="Bruno">
+                    <img src="imagenes/bruno.png" alt="Bruno">
                 </div>
             </article>
             <article>
                 <div>
-                    <img src="imagenes/Toby.png"
-                        alt="Toby">
+                    <img src="imagenes/toby.png" alt="Toby">
                 </div>
                 <div>
                     <h2>¡TOBY!</h2>
@@ -243,14 +249,11 @@
                         <strong>Tamaño/Raza:</strong> Schnauzer - Mediano<br>
                         <strong>Estado:</strong> Adoptado 🔴
                     </p>
-                    <button class="btn-ver-mas">Ver perfil →</button>
+                    <button class="btn-adoptar">Adoptar</button>
                 </div>
             </article>
             <article>
-                <div>
-                    <img src="imagenes/simba.png"
-                        alt="Simba">
-                </div>
+
                 <div>
                     <h2>¡SIMBA!</h2>
                     <p>
@@ -258,11 +261,16 @@
                         <strong>Tamaño/Raza:</strong> Pequeña / Naranja<br>
                         <strong>Estado:</strong> Disponible 🟢
                     </p>
-                    <button class="btn-ver-mas">Ver perfil →</button>
+                    <button class="btn-adoptar">Adoptar</button>
                 </div>
-
+                <div>
+                    <img src="imagenes/simba.png" alt="Simba">
+                </div>
             </article>
             <article>
+                <div>
+                    <img src="imagenes/lupita.png" alt="lupita">
+                </div>
                 <div>
                     <h2>¡LUPITA!</h2>
                     <p>
@@ -270,18 +278,11 @@
                         <strong>Tamaño/Raza:</strong> Pequeña - Pincher<br>
                         <strong>Estado:</strong> Disponible 🟢
                     </p>
-                    <button class="btn-ver-mas">Ver perfil →</button>
-                </div>
-                <div>
-                    <img src="imagenes/lupita.png"
-                        alt="lupita">
+                    <button class="btn-adoptar">Adoptar</button>
                 </div>
             </article>
             <article>
-                <div>
-                    <img src="imagenes/nieve.png"
-                        alt="Nieve">
-                </div>
+
                 <div>
                     <h2>¡NIEVE!</h2>
                     <p>
@@ -289,13 +290,15 @@
                         <strong>Tamaño/Raza:</strong> Pequeña - Angora (blanco)<br>
                         <strong>Estado:</strong> Disponible 🟢
                     </p>
-                    <button class="btn-ver-mas">Ver perfil →</button>
+                    <button class="btn-adoptar">Adoptar</button>
+                </div>
+                <div>
+                    <img src="imagenes/nieve.png" alt="Nieve">
                 </div>
             </article>
             <article>
                 <div>
-                    <img src="imagenes/max.png"
-                        alt="max">
+                    <img src="imagenes/max.png" alt="max">
                 </div>
                 <div>
                     <h2>¡MAX!</h2>
@@ -304,9 +307,8 @@
                         <strong>Tamaño/Raza:</strong> Mediano / Pitbull<br>
                         <strong>Estado:</strong> Disponible 🟢
                     </p>
-                    <button class="btn-ver-mas">Ver perfil →</button>
+                    <button class="btn-adoptar">Adoptar</button>
                 </div>
-
             </article>
             <article>
                 <div>
@@ -319,8 +321,7 @@
                     <button class="btn-ver-mas">Ver perfil →</button>
                 </div>
                 <div>
-                    <img src="imagenes/morita.png"
-                        alt="Morita">
+                    <img src="imagenes/morita.png" alt="Morita">
                 </div>
             </article>
 
@@ -357,13 +358,84 @@
                 </p>
                 <input type="text" placeholder="First name">
                 <input type="text" placeholder="Last name">
-                <input type="email" name="email" id="" placeholder="Email">
-                <input type="checkbox" name="" id="checkbox" value="">
-                <label for="checkbox">I agree with <span> the terms and conditions</span></label>
-                <input type="button" value="Send">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <div id="check">
+                    <input type="checkbox" name="" id="checkbox" value="">
+                    <label for="checkbox">I agree with <span> the terms and conditions</span></label>
+                </div>
+                <input type="button" value="Send" id="btn-contact">
             </article>
         </section>
     </main>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-columna">
+                <div class="footer-logo">
+                    <span class="footer-logo-icon">🐾</span>
+                    <h3>Patitas Felices</h3>
+                </div>
+                <p class="footer-descripcion">
+                    Transformando vidas a través del amor y el respeto por los animales.
+                    Cada rescate es un compromiso de por vida.
+                </p>
+                <div class="footer-redes">
+                    <a href="#" class="red-social">📘</a>
+                    <a href="#" class="red-social">📸</a>
+                    <a href="#" class="red-social">🐦</a>
+                    <a href="#" class="red-social">📹</a>
+                </div>
+            </div>
+
+            <div class="footer-columna">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="#about">Quiénes somos</a></li>
+                    <li><a href="#Mision">Nuestra misión</a></li>
+                    <li><a href="#Vision">Nuestra visión</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-columna">
+                <h4>Adopción responsable</h4>
+                <ul>
+                    <li><a href="#catalogo">Animales disponibles</a></li>
+                    <li><a href="#">Proceso de adopción</a></li>
+                    <li><a href="#">Requisitos</a></li>
+                    <li><a href="#">Seguimiento post-adopción</a></li>
+                    <li><a href="#">Historias de éxito</a></li>
+                </ul>
+            </div>
+            <div class="footer-columna">
+                <h4>Cómo ayudar</h4>
+                <ul>
+                    <li><a href="#">Donaciones</a></li>
+                    <li><a href="#">Voluntariado</a></li>
+                    <li><a href="#">Apadrinar un animal</a></li>
+                    <li><a href="#">Compartir en redes</a></li>
+                    <li><a href="#">Eventos solidarios</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-links-adicionales">
+            <div class="footer-links-container">
+                <a href="#">Preguntas frecuentes</a>
+                <span class="separador">|</span>
+                <a href="#">Puntos de encuentro</a>
+                <span class="separador">|</span>
+                <a href="#">Blog animal</a>
+                <span class="separador">|</span>
+                <a href="#">Denuncias</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2024 Patitas Felices Fundación Animal. Todos los derechos reservados.</p>
+                <p class="footer-dev">Diseñado con ❤️ para los peluditos</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
