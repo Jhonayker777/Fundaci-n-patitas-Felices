@@ -272,14 +272,18 @@ nav ul li a:hover {
 
 
 #about {
-    padding: 6rem 8%;
+    padding: 0 8%;
     background-image: url('imagenes/fondopatitas.png');
-    background-size: 100%;
-    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 }
-    
+
+#quienes-somos-container {
+    position: relative;
+    z-index: 2;
+}
 
 #about::before {
     content: '❤️';
@@ -309,6 +313,7 @@ nav ul li a:hover {
 
 #about h2 {
     font-size: 3.2rem;
+    margin-top: 6rem;
     margin-bottom: 2rem;
     background: linear-gradient(135deg, var(--mar) 0%, var(--cielo) 100%);
     background-clip: text;
@@ -351,25 +356,6 @@ nav ul li a:hover {
     bottom: -10px;
     font-family: serif;
 }
-
-#about button {
-    background: linear-gradient(135deg, var(--mar), var(--cielo));
-    color: var(--blanco);
-    border: none;
-    padding: 1rem 2.8rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: var(--borde-muy-redondo);
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 1rem;
-    box-shadow: 0 6px 20px rgba(90, 155, 223, 0.3);
-}
-
-#about button:hover {
-    transform: translateY(-3px);
-}
-
 
 #Mision {
     padding: 5rem 8%;
@@ -482,12 +468,12 @@ nav ul li a:hover {
     font-family: 'parrafos';
 }
 
-
 #Vision {
     padding: 5rem 8%;
     background: linear-gradient(135deg, var(--lago) 0%, var(--mar) 100%);
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 #Vision::before {
@@ -497,6 +483,17 @@ nav ul li a:hover {
     opacity: 0.08;
     right: 20px;
     bottom: 20px;
+    pointer-events: none;
+}
+
+#Vision::after {
+    content: '⭐';
+    position: absolute;
+    font-size: 150px;
+    opacity: 0.06;
+    left: 20px;
+    top: 20px;
+    pointer-events: none;
 }
 
 #Vision h2 {
@@ -504,21 +501,38 @@ nav ul li a:hover {
     margin-bottom: 1rem;
     color: var(--blanco);
     font-family: 'MiFuentePersonalizada';
+    position: relative;
+    display: inline-block;
 }
 
-#Vision p {
-    font-size: 1.3rem;
+#Vision h2::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--blanco);
+    border-radius: 3px;
+    opacity: 0.5;
+}
+
+
+.vision-frase {
+    font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: 3rem;
     font-style: italic;
     font-family: 'parrafos';
+    letter-spacing: 1px;
 }
 
 .vision-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #Vision article {
@@ -527,6 +541,26 @@ nav ul li a:hover {
     border-radius: var(--borde-redondo);
     transition: all 0.4s;
     text-align: center;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#Vision article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blanco), var(--arena));
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+
+#Vision article:hover::before {
+    transform: scaleX(1);
 }
 
 #Vision article:hover {
@@ -535,8 +569,13 @@ nav ul li a:hover {
 }
 
 .vision-icono {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+#Vision article:hover .vision-icono {
+    transform: scale(1.1);
 }
 
 #Vision article h3 {
@@ -544,13 +583,60 @@ nav ul li a:hover {
     color: var(--mar);
     margin-bottom: 0.8rem;
     font-weight: 700;
+    font-family: 'MiFuentePersonalizada';
 }
 
 #Vision article p {
     font-size: 0.95rem;
     color: var(--texto-suave);
+    line-height: 1.6;
+    font-family: 'parrafos';
 }
 
+@media (max-width: 1200px) {
+    .vision-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #Vision {
+        padding: 3rem 5%;
+    }
+    
+    #Vision h2 {
+        font-size: 2.2rem;
+    }
+    
+    .vision-frase {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .vision-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #Vision article {
+        padding: 1.5rem;
+    }
+    
+    .vision-icono {
+        font-size: 2.5rem;
+    }
+    
+    #Vision article h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vision-frase {
+        font-size: 1rem;
+    }
+}
 
 #Eventos {
     padding: 5rem 8%;
@@ -640,14 +726,138 @@ nav ul li a:hover {
 
 #portada {
     background: linear-gradient(135deg, var(--arena) 0%, var(--cardo) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4rem 8%;
+    text-align: center;
+    border: none;
+    outline: none;
 }
 
-#catalogo article:not(#portada):nth-child(even) {
-    background: var(--blanco);
+.portada-contenido {
+    max-width: 700px;
+    height: 10%;
+    border: none;
+    outline: none;
 }
 
-#catalogo article:not(#portada):nth-child(odd) {
-    background: var(--fondo-calido);
+.portada-logo {
+    margin-bottom: 1.5rem;
+    border: none;
+}
+
+.portada-logo img {
+    width: 15em !important;
+    min-width: 40px !important;
+    height: auto !important;
+    display: flex;
+    margin: 0 auto;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+.portada-frase {
+    font-size: 2rem !important;
+    line-height: 1.4;
+    color: var(--texto-profundo);
+    font-family: 'MiFuentePersonalizada';
+    text-align: center;
+    margin: 0 !important;
+    border: none;
+    outline: none;
+}
+
+.portada-imagen {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+}
+
+#portada .portada-imagen img {
+    height: 20vw !important;
+    min-width: 150px !important;
+    min-height: 150px !important;
+    display: flex;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+@media (max-width: 1024px) {
+    .portada-frase {
+        font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+    }
+    
+    .portada-logo img {
+        width: 5.5vw !important;
+        min-width: 35px !important;
+        max-width: 70px !important;
+    }
+    
+    #portada .portada-imagen img {
+        width: 40vw !important;
+        height: 40vw !important;
+        max-width: 400px !important;
+        max-height: 400px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #portada {
+        padding: 3rem 5%;
+        gap: 1.5rem;
+    }
+    
+    .portada-frase {
+        font-size: clamp(1rem, 4.5vw, 1.5rem);
+    }
+    
+    .portada-logo img {
+        width: 6vw !important;
+        min-width: 30px !important;
+        max-width: 60px !important;
+    }
+    
+    #portada .portada-imagen img {
+        width: 45vw !important;
+        height: 45vw !important;
+        max-width: 300px !important;
+        max-height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .portada-frase {
+        font-size: clamp(0.9rem, 5vw, 1.2rem);
+    }
+    
+    .portada-logo img {
+        width: 7vw !important;
+        min-width: 25px !important;
+        max-width: 50px !important;
+    }
+    
+    #portada .portada-imagen img {
+        width: 55vw !important;
+        height: 55vw !important;
+        max-width: 220px !important;
+        max-height: 220px !important;
+    }
 }
 
 #catalogo article  div:first-child {
@@ -657,14 +867,14 @@ nav ul li a:hover {
 }
 
 #catalogo article h2 {
-    font-size: 4.2rem;
+    font-size: 9.2rem;
     color: var(--mar);
     margin-bottom: 1.5rem;
     font-family: 'MiFuentePersonalizada';
 }
 
 #catalogo article p {
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     color: var(--texto-suave);
     line-height: 1.9;
     margin-bottom: 2rem;
@@ -693,10 +903,9 @@ nav ul li a:hover {
 #catalogo article img {
     width: 100%;
     max-width: 480px;
-    height: 480px;
+
     object-fit: cover;
     border-radius: var(--borde-redondo);
-    box-shadow: var(--sombra-natural);
     transition: transform 0.3s;
 }
 
@@ -754,20 +963,33 @@ nav ul li a:hover {
 }
 #contact p {
     font-family: 'parrafos';
+    grid-column: 1 / -1;
 }
 
 #contact article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
 }
-
+#email {
+    grid-column: 1 / -1;
+}
+#btn-contact {
+    grid-column: 1 / -1;
+}
 #contact h2 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
     font-family: 'MiFuentePersonalizada';
+    grid-column: 1 / -1;
 }
-
+#check {
+    grid-column: 1 / -1;
+    text-align: left;
+}
 #contact input:not([type="checkbox"]):not([type="button"]) {
     width: 100%;
     padding: 1rem 1.2rem;
@@ -812,6 +1034,267 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
+
+
+footer {
+    background: linear-gradient(135deg, var(--texto-profundo) 0%, #1a2a3a 100%);
+    color: var(--blanco);
+    margin-top: 0;
+    position: relative;
+}
+
+
+footer::before {
+    content: '🐾';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    background: var(--blanco);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra-natural);
+    background: var(--mar);
+    color: var(--blanco);
+}
+
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 4rem 8% 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.footer-columna {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.footer-columna:nth-child(1) { animation-delay: 0.1s; }
+.footer-columna:nth-child(2) { animation-delay: 0.2s; }
+.footer-columna:nth-child(3) { animation-delay: 0.3s; }
+.footer-columna:nth-child(4) { animation-delay: 0.4s; }
+
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-icon {
+    font-size: 2rem;
+}
+
+.footer-logo h3 {
+    font-size: 1.5rem;
+    color: var(--blanco);
+    margin: 0;
+}
+
+
+.footer-descripcion {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+
+.footer-redes {
+    display: flex;
+    gap: 1rem;
+}
+
+.red-social {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--blanco);
+    transition: all 0.3s;
+    font-size: 1.2rem;
+}
+
+.red-social:hover {
+    background: var(--mar);
+    transform: translateY(-3px);
+}
+
+
+.footer-columna h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: var(--blanco);
+    position: relative;
+    display: inline-block;
+}
+
+.footer-columna h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--mar);
+    border-radius: 2px;
+}
+
+
+.footer-columna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-columna ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-columna ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.footer-columna ul li a:hover {
+    color: var(--mar);
+    transform: translateX(5px);
+}
+
+
+.footer-links-adicionales {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem 8%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-links-container a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    padding: 0.3rem 0.8rem;
+}
+
+.footer-links-container a:hover {
+    color: var(--mar);
+}
+
+.separador {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+.footer-bottom {
+    padding: 1.5rem 8%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-dev {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3rem 5%;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-redes {
+        justify-content: center;
+    }
+    
+    .footer-columna h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .separador {
+        display: none;
+    }
+    
+    .footer-bottom-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    footer::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 2rem 5%;
+    }
+    
+    .footer-links-adicionales {
+        padding: 1rem 5%;
+    }
+    
+    .footer-bottom {
+        padding: 1rem 5%;
+    }
+}
 
 @keyframes fadeInUp {
     from {
