@@ -87,3 +87,5 @@ Para mantener todo en orden, usamos:
 `style`: para cambios en la disposición (misión/visión).
 
 `docs`: para este README.
+
+# 📁Figma: https://www.figma.com/design/WZcfrQPj26HFIjVMy0WRdT/Patitas-Felices?node-id=0-1&t=9lklFSrys6eZYxxT-1
