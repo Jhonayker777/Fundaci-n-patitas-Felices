@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('fonts/LuckiestGuy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'parrafos';
+    src: url('fonts/KGPerfectPenmanship.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --arena: #F5F0EB;
+    --cardo: #E8DCD9;
+    --cielo: #7B82B8;
+    --mar: #5A9BDF;
+    --lago: #8BB5E8;
+    --blanco: #FFFFFF;
+    --texto-profundo: #2C3E4E;
+    --texto-suave: #5D6E7E;
+    --fondo-calido: #FDF9F7;
+    --sombra-natural: 0 12px 35px rgba(0, 0, 0, 0.08);
+    --sombra-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
+    --borde-redondo: 24px;
+    --borde-muy-redondo: 40px;
+}
+
+body {
+    background-color: var(--fondo-calido);
+    color: var(--texto-profundo);
+    line-height: 1.5;
+    font-family: 'parrafos', 'Segoe UI', system-ui, sans-serif;
+}
+
+#testimonios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: clamp(3rem, 8vw, 5rem) 8%;
+    background: var(--arena);
+}
+
+h1 {
+    font-size: 5em;
+    margin-bottom: 2rem;
+    background: var(--cielo);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'MiFuentePersonalizada';
+    text-align: center;
+}
+
+#testimonio-section {
+    background: var(--arena);
+}
+#testimonio-section h2{
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 2rem;
+    color: var(--texto-profundo);
+    font-family: 'MiFuentePersonalizada';
+    text-align: center;
+    padding-top: 1em;
+}
+
+#testimonios article {
+    background: var(--blanco);
+    padding: clamp(1.2rem, 3vw, 2rem);
+    border-radius: var(--borde-redondo);
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: var(--sombra-suave);
+}
+
+#testimonios article:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-natural);
+}
+
+#testimonios img {
+    width: clamp(70px, 10vw, 85px);
+    height: clamp(70px, 10vw, 85px);
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+#testimonios h4 {
+    color: var(--mar);
+    margin-bottom: 1rem;
+    font-family: 'MiFuentePersonalizada';
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+#testimonios p {
+    color: var(--texto-suave);
+    line-height: 1.6;
+    font-family: 'parrafos';
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+}
+
+#Galeria {
+    padding: clamp(3rem, 8vw, 5rem) 8%;
+    background: linear-gradient(135deg, var(--arena) 0%, var(--cardo) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.Galeria-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1% ;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.Galeria-container img {
+    width: 20em;
+    height: 25em;
+    border-radius: 10%;
+}
+.Galeria-container img:hover {
+    transform: scale(1.1);
+    transition: 0.5 ;
+}
+
+#Galeria h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 2rem;
+    color: var(--texto-profundo);
+    font-family: 'MiFuentePersonalizada';
+}
+
+@media (max-width: 480px) {
+    .Galeria-container {
+        grid-template-columns: repeat(1, 1fr); /*No se ajustan las imagenes*/
+    }
+}
+
+@media (max-width: 1024px) {
+    .Galeria-container{
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 4em;
+    }
+ }
