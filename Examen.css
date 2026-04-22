@@ -140,16 +140,15 @@ h1 {
     color: var(--texto-profundo);
     font-family: 'MiFuentePersonalizada';
 }
-
-@media (max-width: 480px) {
-    .Galeria-container {
-        grid-template-columns: repeat(1, 1fr); /*No se ajustan las imagenes*/
-    }
-}
-
 @media (max-width: 1024px) {
     .Galeria-container{
         grid-template-columns: repeat(2, 1fr);
         margin-left: 4em;
     }
  }
+@media (max-width: 480px) {
+    .Galeria-container {
+        grid-template-columns: repeat(1, 1fr); /*No se ajustan las imagenes*/
+    }
+}
+
